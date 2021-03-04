@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.community.CommunityFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/fragment_community_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:tabTextColor="#000"
+        app:tabSelectedTextColor="@color/primary"
+        android:background="@drawable/border_under_line"
+        app:tabTextAppearance="@style/tabText">
+        <com.google.android.material.tabs.TabItem
+            android:text="@string/tab_1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="@string/tab_2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/page_1_fragment_container"
+        android:layout_below="@id/fragment_community_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

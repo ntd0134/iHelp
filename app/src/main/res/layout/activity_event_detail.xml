@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.event_detail.EventDetailActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/ic_size_clickable"
+                android:layout_height="@dimen/ic_size_clickable"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/btn_ripple_effect"
+                android:clickable="true"
+                android:padding="@dimen/ic_padding_clickable"
+                android:src="@drawable/ic_left_arrow" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_logo3_minimized" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_primary"
+                android:paddingBottom="50dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_item_test" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/component_horizontal_default_space"
+                    android:layout_marginTop="120dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_surround_gray"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/txt_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Hỗ trợ dọn rác ở bãi biển"
+                            android:textColor="@color/txt_primary"
+                            android:textSize="@dimen/txt_size_big" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="@dimen/ic_size"
+                                    android:layout_height="@dimen/ic_size"
+                                    android:src="@drawable/ic_check_box" />
+
+                                <TextView
+                                    style="@style/txt_light"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="3 participants" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    style="@style/txt_bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="2 spots left" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/border_surround_gray"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_under_line"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/img_profile_test" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/txt_bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Organizer"
+                                    android:textSize="@dimen/txt_size_big" />
+
+                                <TextView
+                                    style="@style/txt_light"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Đạt Nguyễn" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:layout_width="@dimen/ic_size"
+                                android:layout_height="@dimen/ic_size"
+                                android:src="@drawable/ic_clock" />
+                            <TextView
+                                style="@style/txt_light"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10dp"
+                                android:text="5 hours" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:layout_width="@dimen/ic_size"
+                                android:layout_height="@dimen/ic_size"
+                                android:src="@drawable/ic_point" />
+
+                            <TextView
+                                style="@style/txt_light"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10dp"
+                                android:text="10 points" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                style="@style/txt_light"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cảm thấy bãi biển nơi mình đang có sự ô nhiễm trầm trọng\nMình tạo sự kiện này mong mọi người cùng nhau chung tay góp sức dọn dẹp rác bảo vệ môi trường" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/border_under_line_background_primary">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp">
+                            <TextView
+                                style="@style/txt_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Participants"
+                                android:textSize="@dimen/txt_size_big" />
+                        </LinearLayout>
+                        <FrameLayout
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_under_line_layer"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+                        <ImageView
+                            android:src="@drawable/img_profile_test"
+                            android:layout_width="@dimen/ic_profile_size"
+                            android:layout_height="@dimen/ic_profile_size"
+                            android:layout_marginRight="5dp"/>
+                        <ImageView
+                            android:src="@drawable/img_profile_test"
+                            android:layout_width="@dimen/ic_profile_size"
+                            android:layout_height="@dimen/ic_profile_size"
+                            android:layout_marginRight="5dp"/>
+                        <ImageView
+                            android:src="@drawable/img_profile_test"
+                            android:layout_width="@dimen/ic_profile_size"
+                            android:layout_height="@dimen/ic_profile_size"
+                            android:layout_marginRight="5dp"/>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/border_under_line_background_primary">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp">
+                            <TextView
+                                style="@style/txt_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Categories"
+                                android:textSize="@dimen/txt_size_big" />
+                        </LinearLayout>
+                        <FrameLayout
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/border_under_line_layer"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_surround_gray_less_radius"
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="20dp"
+                            android:layout_marginRight="5dp">
+                            <TextView
+                                android:text="Environment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/txt_normal"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_surround_gray_less_radius"
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="20dp"
+                            android:layout_marginRight="10dp">
+                            <TextView
+                                android:text="Animal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/txt_normal"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:background="@drawable/border_surround_gray">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:src="@drawable/ic_list"
+                                    android:layout_width="@dimen/ic_size"
+                                    android:layout_height="@dimen/ic_size"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="20dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Onsite Event"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    style="@style/txt_bold"/>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:text="Start: "
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/txt_bold"/>
+                                    <TextView
+                                        android:text="T4, 02 01 2021 | 09:00 AM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/txt_light"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:text="End: "
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/txt_bold"/>
+                                    <TextView
+                                        android:text="T4, 02 01 2021 | 02:00 PM"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/txt_light"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:src="@drawable/ic_location"
+                                    android:layout_width="@dimen/ic_size"
+                                    android:layout_height="@dimen/ic_size"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="20dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    style="@style/txt_bold"/>
+                                <TextView
+                                    android:text="Vũng tèu, Hồ Chí Minh, Việt Nam"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    style="@style/txt_light"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_menu"
+        android:layout_marginRight="20dp"
+        app:maxImageSize="20dp"
+        app:tint="@color/primary"
+        android:backgroundTint="@color/white"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

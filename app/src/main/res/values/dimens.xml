@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="logo_size">100dp</dimen>
+    <dimen name="component_horizontal_default_space">20dp</dimen>
+
+    <dimen name="ic_size_clickable">40dp</dimen>
+    <dimen name="ic_padding_clickable">10dp</dimen>
+
+    <dimen name="ic_size">20dp</dimen>
+
+    <dimen name="ic_profile_size">45dp</dimen>
+    <dimen name="ic_profile_padding">10dp</dimen>
+
+    <dimen name="txt_size_big">23sp</dimen>
+</resources>
