@@ -6,13 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.ihelp.R;
+import com.example.ihelp.data.local.SharedPrefs;
 import com.example.ihelp.ui.login.LoginActivity;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
-
-    Button mBtnLogout, mBtnLogin;
+    //ui components
+    private Button mBtnLogout;
+    private ImageView mBtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,23 +26,26 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initView(){
-        mBtnLogin = findViewById(R.id.activity_profile_btn_login);
         mBtnLogout = findViewById(R.id.activity_profile_btn_logout);
+        mBtnBack = findViewById(R.id.activity_profile_btn_back);
     }
 
     private void initOnClickListener() {
-        mBtnLogin.setOnClickListener(this);
         mBtnLogout.setOnClickListener(this);
+        mBtnBack.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.activity_profile_btn_login:
-                Intent it = new Intent(ProfileActivity.this, LoginActivity.class);
-                startActivity(it);
-                break;
             case R.id.activity_profile_btn_logout:
+                //clear user info
+                SharedPrefs.removeRemoveUserInfo(this.getApplicationContext());
+                //self-destroy
+                finish();
+                break;
+            case R.id.activity_profile_btn_back:
+                super.onBackPressed();
                 break;
         }
     }

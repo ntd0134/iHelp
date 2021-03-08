@@ -8,18 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.ihelp.R;
+import com.example.ihelp.data.local.SharedPrefs;
 import com.example.ihelp.ui.community.CommunityFragment;
 import com.example.ihelp.ui.dashboard.DashboardFragment;
 import com.example.ihelp.ui.personal_service.PersonalServiceFragment;
 import com.example.ihelp.ui.personal_event.PersonalEventFragment;
 import com.example.ihelp.ui.profile.ProfileActivity;
+import com.example.ihelp.ui.profile_guest.ProfileGuestActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    BottomNavigationView mBotNav;
-    ImageView mBtnProfile;
+    //ui components
+    private BottomNavigationView mBotNav;
+    private ImageView mBtnProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView(){
-        mBotNav = findViewById(R.id.bottom_navigation);
-        mBtnProfile = findViewById(R.id.btn_profile);
+        mBotNav = findViewById(R.id.activity_main_bottom_navigation);
+        mBtnProfile = findViewById(R.id.activity_main_btn_profile);
     }
 
     private void initOnClickListener(){
@@ -64,9 +69,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_profile:
-                Intent it = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(it);
+            case R.id.activity_main_btn_profile:
+                Intent intent;
+                //check if user has logged in (has accesstoken)
+                //user is not logged in
+                if(SharedPrefs.getAccessToken(this).isEmpty()){
+                    intent = new Intent(MainActivity.this, ProfileGuestActivity.class);
+                }
+                //user logged in
+                else{
+                    intent = new Intent(MainActivity.this, ProfileActivity.class);
+                }
+                //start activity
+                startActivity(intent);
+
                 break;
         }
     }

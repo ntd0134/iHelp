@@ -11,11 +11,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
-            android:src="@drawable/ic_left_arrow"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="10dp"/>
+            android:id="@+id/activity_login_btn_back"
+            android:layout_width="@dimen/ic_size_clickable"
+            android:layout_height="@dimen/ic_size_clickable"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/btn_ripple_effect"
+            android:clickable="true"
+            android:padding="@dimen/ic_padding_clickable"
+            android:src="@drawable/ic_left_arrow" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,6 +53,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_login_edt_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -62,6 +69,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_login_edt_pwd"
                     android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

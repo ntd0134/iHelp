@@ -7,8 +7,6 @@ import com.example.ihelp.data.remote.CallBackData;
 import com.example.ihelp.data.remote.event.EventRepository;
 import com.example.ihelp.data.remote.event.EventRepositoryImpl;
 
-import java.util.List;
-
 public class EventPresenter {
     private Context mContext;
     private EventView mEventView;
@@ -21,10 +19,11 @@ public class EventPresenter {
     }
 
     public void getEventList(){
+        // TODO: set page non static
         mEventRepository.eventsFindAll(0, new CallBackData<EventsFindAllResponse>() {
             @Override
-            public void onSuccess(EventsFindAllResponse eventsFindAllResponses) {
-                mEventView.loadEventList(eventsFindAllResponses);
+            public void onSuccess(EventsFindAllResponse responsesEventsFindAll) {
+                mEventView.loadEventList(responsesEventsFindAll);
             }
 
             @Override

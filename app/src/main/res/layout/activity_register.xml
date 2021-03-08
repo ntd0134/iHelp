@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/btn_back"
+            android:id="@+id/activity_register_btn_back"
             android:layout_width="@dimen/ic_size_clickable"
             android:layout_height="@dimen/ic_size_clickable"
             android:layout_centerVertical="true"
@@ -63,10 +63,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your email">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_register_edt_email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -88,10 +88,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your password">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_register_edt_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"/>
@@ -114,10 +114,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your name">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_register_edt_fullname"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
@@ -139,10 +139,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your phone number">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_register_edt_phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
@@ -162,6 +162,7 @@
                 android:textColor="@color/dark_grey" />
 
             <Spinner
+                android:id="@+id/activity_register_spn_gender"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="5dp"
@@ -181,6 +182,7 @@
                 android:textColor="@color/dark_grey" />
 
             <TextView
+                android:id="@+id/activity_register_txt_birthdate"
                 android:text="dd-MM-yyyy"
                 style="@style/txt_normal"
                 android:textSize="15.5sp"
@@ -193,10 +195,12 @@
                 android:background="@drawable/border_surround_dark_grey"/>
         </LinearLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity_register_btn_register"
             android:text="Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAllCaps="false"
             android:layout_marginTop="20dp"
             android:layout_gravity="right"/>
 

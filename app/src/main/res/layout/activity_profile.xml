@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/btn_back"
+            android:id="@+id/activity_profile_btn_back"
             android:layout_width="@dimen/ic_size_clickable"
             android:layout_height="@dimen/ic_size_clickable"
             android:layout_centerVertical="true"
@@ -30,133 +30,87 @@
             android:src="@drawable/ic_logo3_minimized" />
     </RelativeLayout>
 
-    <FrameLayout
+    <RelativeLayout
+        android:id="@+id/layout_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_primary">
 
-        <RelativeLayout
-            android:id="@+id/layout_profile"
-            android:visibility="gone"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/background_primary">
-            <ScrollView
+            android:layout_height="wrap_content">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:padding="10dp">
 
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp">
+                    android:layout_height="wrap_content">
 
-                    <FrameLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/border_surround_gray"
+                        android:orientation="vertical"
+                        android:paddingTop="50dp">
+
+                        <TextView
+                            style="@style/txt_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:text="Dat Nguyen"
+                            android:textSize="23sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
-                            android:background="@drawable/border_surround_gray"
-                            android:orientation="vertical"
-                            android:paddingTop="50dp">
+                            android:paddingHorizontal="10dp">
+
+                            <ImageView
+                                android:layout_width="@dimen/ic_size"
+                                android:layout_height="@dimen/ic_size"
+                                android:src="@drawable/ic_birthdate" />
 
                             <TextView
-                                style="@style/txt_bold"
+                                style="@style/txt_light"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginTop="10dp"
-                                android:text="Dat Nguyen"
-                                android:textSize="23sp" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingHorizontal="10dp">
-
-                                <ImageView
-                                    android:layout_width="@dimen/ic_size"
-                                    android:layout_height="@dimen/ic_size"
-                                    android:src="@drawable/ic_birthdate" />
-
-                                <TextView
-                                    android:text="13/09/1999"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    style="@style/txt_light"/>
-                            </LinearLayout>
+                                android:layout_marginLeft="10dp"
+                                android:text="13/09/1999" />
                         </LinearLayout>
+                    </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/border_surround_gray_circle"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_profile_icon" />
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/border_surround_gray_circle"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_profile_icon" />
 
-                    </FrameLayout>
-                </LinearLayout>
-            </ScrollView>
-
-            <Button
-                android:id="@+id/activity_profile_btn_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:paddingHorizontal="30dp"
-                android:textSize="16sp"
-                android:text="Logout"
-                android:background="@drawable/btn_border"
-                style="@style/btn_logout"
-                android:textAllCaps="false"
-                android:layout_marginBottom="20dp"
-                />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical"
-                android:paddingVertical="20dp"
-                android:gravity="center_horizontal">
-                <ImageView
-                    android:src="@drawable/ic_guest"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"/>
-                <TextView
-                    android:text="You are not Logged In"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:textSize="30sp"
-                    android:textColor="@color/grey"
-                    style="@style/txt_bold"/>
-                <Button
-                    android:id="@+id/activity_profile_btn_login"
-                    android:text="Login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:textSize="16sp"
-                    android:textAllCaps="false"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/btn_border"
-                    android:paddingHorizontal="30dp"
-                    />
+                </FrameLayout>
             </LinearLayout>
+        </ScrollView>
 
-        </RelativeLayout>
-    </FrameLayout>
-
-
+        <Button
+            android:id="@+id/activity_profile_btn_logout"
+            style="@style/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_border"
+            android:paddingHorizontal="30dp"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+    </RelativeLayout>
 
 
 </LinearLayout>

@@ -6,8 +6,6 @@ import com.example.ihelp.data.model.response_object.EventsFindAllResponse;
 import com.example.ihelp.data.remote.BaseRepository;
 import com.example.ihelp.data.remote.CallBackData;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
