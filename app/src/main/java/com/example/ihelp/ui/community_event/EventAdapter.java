@@ -1,4 +1,4 @@
-package com.example.ihelp.ui.event;
+package com.example.ihelp.ui.community_event;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ihelp.R;
+import com.example.ihelp.data.model.dtos.EventItem;
 import com.example.ihelp.ui.event_detail.EventDetailActivity;
+import com.example.ihelp.util.DateConverter;
 
 import java.util.List;
 
@@ -53,7 +55,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         EventItem currentItem = mEventList.get(position);
         holder.mTxtType.setText((currentItem.getType()+"").toLowerCase());
         holder.mTxtTitle.setText(currentItem.getTitle());
-        holder.mTxtTime.setText(currentItem.getStartDate()+"");
+        String convertedDate = DateConverter.convertToString(currentItem.getStartDate());
+        holder.mTxtTime.setText(convertedDate);
         int availableSpot = currentItem.getAvailableSpot();
         holder.mTxtAvailableSpot.setText(availableSpot+" spots left");
 

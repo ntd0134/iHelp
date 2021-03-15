@@ -1,4 +1,4 @@
-package com.example.ihelp.ui.event;
+package com.example.ihelp.ui.community_event;
 
 import android.os.Bundle;
 
@@ -12,29 +12,31 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.ihelp.R;
-import com.example.ihelp.data.model.response_object.EventsFindAllResponse;
+import com.example.ihelp.data.model.dtos.EventItem;
+import com.example.ihelp.data.model.enums.EventType;
+import com.example.ihelp.data.model.response_object.EventListResponse;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventFragment extends Fragment implements EventView{
+public class CommunityEventFragment extends Fragment implements CommunityEventView {
     //fragment view
     private View mView;
     //ui components
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    //MVP fields
-    private EventPresenter mEventPresenter;
+    //MVP presenter
+    private CommunityEventPresenter mCommunityEventPresenter;
 
-    public EventFragment() {
+    public CommunityEventFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_event, container, false);
+        mView = inflater.inflate(R.layout.fragment_community_event, container, false);
         initView();
         initVar();
         initData();
@@ -46,16 +48,16 @@ public class EventFragment extends Fragment implements EventView{
     }
 
     private void initVar(){
-        mEventPresenter = new EventPresenter(mView.getContext(), this);
+        mCommunityEventPresenter = new CommunityEventPresenter(mView.getContext(), this);
     }
 
     private void initData(){
-        mEventPresenter.getEventList();
+        mCommunityEventPresenter.getEventList();
     }
 
 
     @Override
-    public void loadEventList(EventsFindAllResponse response) {
+    public void loadEventList(EventListResponse response) {
         //get require fields from response obj
         List eventItems = new ArrayList();
         for(int i=0; i<response.events.size();i++){

@@ -1,4 +1,4 @@
-package com.example.ihelp.ui.service;
+package com.example.ihelp.ui.community_service;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.ihelp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ServiceFragment#newInstance} factory method to
+ * Use the {@link CommunityServiceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ServiceFragment extends Fragment {
+public class CommunityServiceFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class ServiceFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ServiceFragment() {
+    public CommunityServiceFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class ServiceFragment extends Fragment {
      * @return A new instance of fragment CommunityEventFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ServiceFragment newInstance(String param1, String param2) {
-        ServiceFragment fragment = new ServiceFragment();
+    public static CommunityServiceFragment newInstance(String param1, String param2) {
+        CommunityServiceFragment fragment = new CommunityServiceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class ServiceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_service, container, false);
+        return inflater.inflate(R.layout.fragment_community_service, container, false);
     }
 }

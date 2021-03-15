@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.ihelp.R;
-import com.example.ihelp.ui.event.EventFragment;
-import com.example.ihelp.ui.service.ServiceFragment;
+import com.example.ihelp.ui.community_event.CommunityEventFragment;
+import com.example.ihelp.ui.community_service.CommunityServiceFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class CommunityFragment extends Fragment {
@@ -42,7 +42,7 @@ public class CommunityFragment extends Fragment {
         mView = inflater.inflate(R.layout.fragment_community, container, false);
         initView();
         initTabBar();
-        mActivity.getSupportFragmentManager().beginTransaction().replace(R.id.page_1_fragment_container, new EventFragment()).commit();
+        mActivity.getSupportFragmentManager().beginTransaction().replace(R.id.page_1_fragment_container, new CommunityEventFragment()).commit();
         return mView;
     }
 
@@ -57,10 +57,10 @@ public class CommunityFragment extends Fragment {
                 Fragment selectedFragment = null;
                 switch (tab.getPosition()) {
                     case 0:
-                        selectedFragment = new EventFragment();
+                        selectedFragment = new CommunityEventFragment();
                         break;
                     case 1:
-                        selectedFragment = new ServiceFragment();
+                        selectedFragment = new CommunityServiceFragment();
                         break;
                 }
                 mActivity.getSupportFragmentManager().beginTransaction().replace(R.id.page_1_fragment_container, selectedFragment).commit();

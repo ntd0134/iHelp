@@ -14,17 +14,15 @@ import android.widget.Toast;
 
 import com.example.ihelp.R;
 import com.example.ihelp.data.local.SharedPrefs;
+import com.example.ihelp.data.model.enums.Gender;
 import com.example.ihelp.data.model.request_object.LoginRequest;
 import com.example.ihelp.data.model.request_object.SignUpRequest;
 import com.example.ihelp.data.model.response_object.LoginResponse;
 import com.example.ihelp.ui.main.MainActivity;
-import com.example.ihelp.ui.profile.ProfileActivity;
 import com.example.ihelp.util.DateConverter;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.datepicker.DateSelector;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
-import com.google.android.material.datepicker.MaterialTextInputPicker;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterView, View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -59,6 +57,10 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
         mTxtBirthDate = findViewById(R.id.activity_register_txt_birthdate);
         mBtnRegister = findViewById(R.id.activity_register_btn_register);
         mBtnBack = findViewById(R.id.activity_register_btn_back);
+        //init spinner
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spn_gender_data, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpnGender.setAdapter(spinnerAdapter);
     }
 
     private void initVar(){
@@ -91,10 +93,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
         mBtnRegister.setOnClickListener(this);
         mTxtBirthDate.setOnClickListener(this);
         mBtnBack.setOnClickListener(this);
-        //init spinner
-        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spn_gender_data, android.R.layout.simple_spinner_item);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpnGender.setAdapter(spinnerAdapter);
         mSpnGender.setOnItemSelectedListener(this);
     }
 

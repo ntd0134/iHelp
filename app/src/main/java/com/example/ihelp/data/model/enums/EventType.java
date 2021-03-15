@@ -1,4 +1,4 @@
-package com.example.ihelp.ui.event;
+package com.example.ihelp.data.model.enums;
 
 public enum EventType {
     ONSITE, ONLINE

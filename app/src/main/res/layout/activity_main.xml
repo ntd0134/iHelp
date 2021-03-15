@@ -45,7 +45,7 @@
                     android:clickable="true"/>
                 <ImageView
                     android:id="@+id/activity_main_btn_profile"
-                    android:src="@drawable/ic_profile_icon"
+                    android:src="@drawable/ic_default_profile_avatar"
                     android:layout_width="@dimen/ic_profile_size"
                     android:layout_height="@dimen/ic_profile_size"
                     android:padding="@dimen/ic_profile_padding"
@@ -57,6 +57,7 @@
             android:id="@+id/main_activity_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/background_primary"
             android:layout_marginBottom="50dp" />
     </LinearLayout>
 

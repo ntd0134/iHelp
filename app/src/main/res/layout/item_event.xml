@@ -18,9 +18,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:src="@drawable/img_item_test"
+                android:src="@drawable/img_default_image"
+                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/img_default_height"
                 android:adjustViewBounds="true"
                 />
 

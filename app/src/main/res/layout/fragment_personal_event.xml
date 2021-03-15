@@ -7,6 +7,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.personal_event.PersonalEventFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_personal_event_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/frgmt_personal_event_btn_create_event"
         android:layout_width="wrap_content"

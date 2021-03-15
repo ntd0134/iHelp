@@ -17,7 +17,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/btn_back"
+                android:id="@+id/activity_event_detail_btn_back"
                 android:layout_width="@dimen/ic_size_clickable"
                 android:layout_height="@dimen/ic_size_clickable"
                 android:layout_centerVertical="true"
@@ -46,9 +46,10 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/img_default_height"
+                    android:scaleType="centerCrop"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/img_item_test" />
+                    android:src="@drawable/img_default_image" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -65,13 +66,13 @@
                         android:padding="15dp">
 
                         <TextView
-                            android:id="@+id/txt_title"
+                            android:id="@+id/activity_event_detail_txt_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="20dp"
                             android:fontFamily="sans-serif-condensed-medium"
-                            android:text="Hỗ trợ dọn rác ở bãi biển"
+                            android:text="string_title"
                             android:textColor="@color/txt_primary"
                             android:textSize="@dimen/txt_size_big" />
 
@@ -90,12 +91,19 @@
                                     android:src="@drawable/ic_check_box" />
 
                                 <TextView
+                                    android:id="@+id/activity_event_detail_txt_participant"
                                     style="@style/txt_light"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="10dp"
-                                    android:text="3 participants" />
+                                    android:text="integer" />
+                                <TextView
+                                    style="@style/txt_light"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:text=" participants" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -105,11 +113,18 @@
                                 android:layout_centerVertical="true">
 
                                 <TextView
+                                    android:id="@+id/activity_event_detail_txt_spot"
                                     style="@style/txt_bold"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
-                                    android:text="2 spots left" />
+                                    android:text="integer" />
+                                <TextView
+                                    style="@style/txt_bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text=" spots left" />
                             </LinearLayout>
                         </RelativeLayout>
 
@@ -132,7 +147,7 @@
                             <ImageView
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:src="@drawable/img_profile_test" />
+                                android:src="@drawable/ic_default_profile_avatar" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -149,29 +164,12 @@
                                     android:textSize="@dimen/txt_size_big" />
 
                                 <TextView
+                                    android:id="@+id/activity_event_detail_txt_author_name"
                                     style="@style/txt_light"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Đạt Nguyễn" />
+                                    android:text="string_author_email" />
                             </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
-
-                            <ImageView
-                                android:layout_width="@dimen/ic_size"
-                                android:layout_height="@dimen/ic_size"
-                                android:src="@drawable/ic_clock" />
-                            <TextView
-                                style="@style/txt_light"
-                                android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="10dp"
-                                android:text="5 hours" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -185,12 +183,19 @@
                                 android:src="@drawable/ic_point" />
 
                             <TextView
+                                android:id="@+id/activity_event_detail_txt_point"
                                 style="@style/txt_light"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginStart="10dp"
-                                android:text="10 points" />
+                                android:text="integer" />
+                            <TextView
+                                style="@style/txt_light"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text=" points" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -199,10 +204,11 @@
                             android:layout_marginTop="10dp">
 
                             <TextView
+                                android:id="@+id/activity_event_detail_txt_description"
                                 style="@style/txt_light"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Cảm thấy bãi biển nơi mình đang có sự ô nhiễm trầm trọng\nMình tạo sự kiện này mong mọi người cùng nhau chung tay góp sức dọn dẹp rác bảo vệ môi trường" />
+                                android:text="string_description" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -230,26 +236,31 @@
                             android:background="@drawable/border_under_line_layer"/>
                     </FrameLayout>
 
-                    <LinearLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/activity_event_detail_rclr_participants"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp">
-                        <ImageView
-                            android:src="@drawable/img_profile_test"
-                            android:layout_width="@dimen/ic_profile_size"
-                            android:layout_height="@dimen/ic_profile_size"
-                            android:layout_marginRight="5dp"/>
-                        <ImageView
-                            android:src="@drawable/img_profile_test"
-                            android:layout_width="@dimen/ic_profile_size"
-                            android:layout_height="@dimen/ic_profile_size"
-                            android:layout_marginRight="5dp"/>
-                        <ImageView
-                            android:src="@drawable/img_profile_test"
-                            android:layout_width="@dimen/ic_profile_size"
-                            android:layout_height="@dimen/ic_profile_size"
-                            android:layout_marginRight="5dp"/>
-                    </LinearLayout>
+                        android:layout_height="wrap_content"/>
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:padding="10dp">-->
+<!--                        <ImageView-->
+<!--                            android:src="@drawable/img_profile_test"-->
+<!--                            android:layout_width="@dimen/ic_profile_size"-->
+<!--                            android:layout_height="@dimen/ic_profile_size"-->
+<!--                            android:layout_marginRight="5dp"/>-->
+<!--                        <ImageView-->
+<!--                            android:src="@drawable/img_profile_test"-->
+<!--                            android:layout_width="@dimen/ic_profile_size"-->
+<!--                            android:layout_height="@dimen/ic_profile_size"-->
+<!--                            android:layout_marginRight="5dp"/>-->
+<!--                        <ImageView-->
+<!--                            android:src="@drawable/img_profile_test"-->
+<!--                            android:layout_width="@dimen/ic_profile_size"-->
+<!--                            android:layout_height="@dimen/ic_profile_size"-->
+<!--                            android:layout_marginRight="5dp"/>-->
+<!--                    </LinearLayout>-->
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -265,7 +276,7 @@
                                 style="@style/txt_bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Categories"
+                                android:text="Category"
                                 android:textSize="@dimen/txt_size_big" />
                         </LinearLayout>
                         <FrameLayout
@@ -286,21 +297,8 @@
                             android:paddingHorizontal="20dp"
                             android:layout_marginRight="5dp">
                             <TextView
-                                android:text="Environment"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/txt_normal"/>
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/border_surround_gray_less_radius"
-                            android:paddingVertical="10dp"
-                            android:paddingHorizontal="20dp"
-                            android:layout_marginRight="10dp">
-                            <TextView
-                                android:text="Animal"
+                                android:id="@+id/activity_event_detail_txt_category"
+                                android:text="string_category"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 style="@style/txt_normal"/>
@@ -335,12 +333,24 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginLeft="20dp"
                                 android:orientation="vertical">
-                                <TextView
-                                    android:text="Onsite Event"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textSize="20sp"
-                                    style="@style/txt_bold"/>
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:id="@+id/activity_event_detail_txt_event_type"
+                                        android:text="string_event_type"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="20sp"
+                                        style="@style/txt_bold"/>
+                                    <TextView
+                                        android:text=" Event"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="20sp"
+                                        style="@style/txt_bold"/>
+                                </LinearLayout>
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -351,7 +361,8 @@
                                         android:layout_height="wrap_content"
                                         style="@style/txt_bold"/>
                                     <TextView
-                                        android:text="T4, 02 01 2021 | 09:00 AM"
+                                        android:id="@+id/activity_event_detail_txt_start_date"
+                                        android:text="string_start_date"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         style="@style/txt_light"/>
@@ -366,7 +377,8 @@
                                         android:layout_height="wrap_content"
                                         style="@style/txt_bold"/>
                                     <TextView
-                                        android:text="T4, 02 01 2021 | 02:00 PM"
+                                        android:id="@+id/activity_event_detail_txt_end_date"
+                                        android:text="string_end_date"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         style="@style/txt_light"/>
@@ -399,7 +411,8 @@
                                     android:textSize="20sp"
                                     style="@style/txt_bold"/>
                                 <TextView
-                                    android:text="Vũng tèu, Hồ Chí Minh, Việt Nam"
+                                    android:id="@+id/activity_event_detail_txt_location"
+                                    android:text="string_location"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
@@ -419,6 +432,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activity_event_detail_btn_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"

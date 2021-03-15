@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
     private Button mBtnLogin, mBtnRegister;
     private TextInputEditText mEdtEmail, mEdtPwd;
     private ImageView mBtnBack;
-    //MVP fields
+    //MVP
     private LoginPresenter mLoginPresenter;
 
     @Override

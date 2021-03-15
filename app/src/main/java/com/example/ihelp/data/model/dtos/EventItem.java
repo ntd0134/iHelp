@@ -1,4 +1,6 @@
-package com.example.ihelp.ui.event;
+package com.example.ihelp.data.model.dtos;
+
+import com.example.ihelp.data.model.enums.EventType;
 
 public class EventItem {
     private String mTitle;

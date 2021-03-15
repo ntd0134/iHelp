@@ -12,9 +12,9 @@ public class LoginPresenter {
     private LoginView mLoginView;
     private LoginRepository mLoginRepository;
 
-    public LoginPresenter(Context mContext, LoginView mLoginView) {
-        this.mLoginView = mLoginView;
-        this.mLoginRepository = new LoginRepositoryImpl(mContext);
+    public LoginPresenter(Context context, LoginView loginView) {
+        this.mLoginView = loginView;
+        this.mLoginRepository = new LoginRepositoryImpl(context);
     }
 
     public void authenticateUser(LoginRequest requestObj){

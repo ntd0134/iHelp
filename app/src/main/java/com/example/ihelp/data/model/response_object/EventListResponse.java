@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class EventsFindAllResponse {
+public class EventListResponse {
     @SerializedName("totalItems")
     public Integer totalItems;
     @SerializedName("totalPages")

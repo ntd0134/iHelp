@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.guest.GuestFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:paddingVertical="20dp"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:src="@drawable/ic_guest"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+            <TextView
+                android:text="You are not Logged In"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="30sp"
+                android:textColor="@color/grey"
+                style="@style/txt_bold"/>
+            <Button
+                android:id="@+id/fragment_guest_btn_login"
+                android:text="Login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_border"
+                android:paddingHorizontal="30dp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

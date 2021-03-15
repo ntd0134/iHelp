@@ -91,7 +91,7 @@
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/border_surround_gray_circle"
                         android:padding="3dp"
-                        android:src="@drawable/ic_profile_icon" />
+                        android:src="@drawable/ic_default_profile_avatar" />
 
                 </FrameLayout>
             </LinearLayout>
